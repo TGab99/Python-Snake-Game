@@ -6,6 +6,10 @@ import turtle
 WIDTH = 500
 # Define HEIGHT of the screen
 HEIGHT = 500
+# Define FOOD_SIZE of the food
+FOOD_SIZE = 10
+# Set snake's move in milliseconds
+DELAY = 400
 
 # Create the window
 screen = turtle.Screen()
@@ -13,7 +17,30 @@ screen = turtle.Screen()
 screen.setup(WIDTH, HEIGHT)
 # Set the title
 screen.title("Snake Game")
-# Set th background of the window
+# Set the background of the window
 screen.bgcolor("darkblue")
+
+# Create the snake
+snake = turtle.Turtle()
+# Set snake's shape as square
+snake.shape("square")
+snake.penup()
+
+snake_pos = [[0, 0], [20, 0], [40, 0], [60,0]]
+
+# Draw the snake for the first time
+for sp in snake_pos:
+    snake.goto(sp[0], sp[1])
+    snake.stamp()
+
+snake.forward(100)
+
+# Create the food which the snake has to pick up
+food = turtle.Turtle()
+# Set food's shape as circle
+food.shape("circle")
+# Set food's shapesize: FOOD_SIZE / 40
+food.shapesize(FOOD_SIZE / 20)
+food.penup()
 
 turtle.done()
