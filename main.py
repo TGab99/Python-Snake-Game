@@ -1,5 +1,7 @@
 # import the Turtle Graphics module
 import turtle
+# import Random module
+import random
 
 # Define constants
 # Define WIDTH of the screen
@@ -42,5 +44,8 @@ food.shape("circle")
 # Set food's shapesize: FOOD_SIZE / 40
 food.shapesize(FOOD_SIZE / 20)
 food.penup()
+
+food_pos = (random.randint( - WIDTH / 2 + FOOD_SIZE, WIDTH / 2 + FOOD_SIZE), random.randint( - HEIGHT / 2 + FOOD_SIZE, HEIGHT / 2 + FOOD_SIZE))
+food.goto(food_pos)
 
 turtle.done()
