@@ -21,7 +21,7 @@ class Game():
         # Set the background of the window
         self.screen.bgcolor("darkblue")
         # Create the snake
-        self.s = snake.Snake("square", self.screen)
+        self.s = snake.Snake("square", self.screen, self.WIDTH, self.HEIGHT)
         # Create the food
         self.f = food.Food("circle", 10)
 
