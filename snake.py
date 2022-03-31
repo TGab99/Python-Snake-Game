@@ -3,12 +3,14 @@ import turtle
 
 class Snake():
 
-    def __init__(self, shape, screen):
+    def __init__(self, shape, screen, width, height):
         self.snake = turtle.Turtle()
         self.snake.shape(shape)
         self.snake_pos = [[0, 0], [20, 0], [40, 0], [60,0]]
         self.snake.penup()
         self.screen = screen
+        self.WIDTH = width
+        self.HEIGHT = height
         self.DELAY = 400
 
     def draw_snake(self):
@@ -22,12 +24,17 @@ class Snake():
         new_head = self.snake_pos[-1].copy()
         new_head[0] += 10
 
-        self.snake_pos.append(new_head)
+        if new_head in self.snake_pos or new_head[0] < - self.WIDTH / 2 or new_head[0] > self.WIDTH / 2 \
+            or new_head[1] < - self.HEIGHT / 2 or new_head[1] > self.HEIGHT / 2:
+            turtle.bye()
+        else:
 
-        self.snake_pos.pop(0)
+            self.snake_pos.append(new_head)
 
-        self.draw_snake()
+            self.snake_pos.pop(0)
 
-        self.screen.update()
+            self.draw_snake()
 
-        turtle.ontimer(self.move_snake, self.DELAY)
+            self.screen.update()
+
+            turtle.ontimer(self.move_snake, self.DELAY)
