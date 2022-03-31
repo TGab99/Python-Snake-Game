@@ -20,6 +20,8 @@ class Game():
         self.screen.title("Snake Game")
         # Set the background of the window
         self.screen.bgcolor("darkblue")
+        # Turn off automatic animation
+        self.screen.tracer(0)
         # Create the snake
         self.s = snake.Snake("square", self.screen, self.WIDTH, self.HEIGHT)
         # Create the food
