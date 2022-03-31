@@ -31,7 +31,7 @@ class Game():
         # Call move_snake function
         self.s.move_snake()
         
-        # Draw the food
-        self.f.draw_food()
+        # Call food_collision function
+        self.f.food_collision(self.s.snake_pos)
         
         turtle.done()
