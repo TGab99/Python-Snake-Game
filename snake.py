@@ -1,5 +1,7 @@
 # import Turtle module
 import turtle
+# import food
+import food
 
 class Snake():
 
@@ -12,6 +14,7 @@ class Snake():
         self.WIDTH = width
         self.HEIGHT = height
         self.DELAY = 400
+        self.food = food.Food("circle", 10, self.WIDTH, self.HEIGHT)
 
     def draw_snake(self):
         for sp in self.snake_pos:
@@ -31,7 +34,8 @@ class Snake():
 
             self.snake_pos.append(new_head)
 
-            self.snake_pos.pop(0)
+            if not self.food.food_collision(self.snake_pos):
+                self.snake_pos.pop(0)
 
             self.draw_snake()
 
