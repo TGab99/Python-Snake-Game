@@ -2,8 +2,6 @@
 import turtle
 # import snake
 import snake
-# import food
-import food
 
 class Game():
 
@@ -24,14 +22,9 @@ class Game():
         self.screen.tracer(0)
         # Create the snake
         self.s = snake.Snake("square", self.screen, self.WIDTH, self.HEIGHT)
-        # Create the food
-        self.f = food.Food("circle", 10, self.WIDTH, self.HEIGHT)
 
     def main(self):
         # Call move_snake function
         self.s.move_snake()
-        
-        # Call food_collision function
-        self.f.food_collision(self.s.snake_pos)
         
         turtle.done()
