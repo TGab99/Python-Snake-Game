@@ -23,7 +23,7 @@ class Game():
         # Create the snake
         self.s = snake.Snake("square", self.screen, self.WIDTH, self.HEIGHT)
         # Create the food
-        self.f = food.Food("circle", 10)
+        self.f = food.Food("circle", 10, self.WIDTH, self.HEIGHT)
 
     def main(self):
         # Call move_snake function
