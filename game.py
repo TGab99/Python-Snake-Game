@@ -26,5 +26,9 @@ class Game():
     def main(self):
         # Call move_snake function
         self.s.move_snake()
+
+        self.screen.listen()
+        
+        self.s.bind_direction_keys()
         
         turtle.done()
